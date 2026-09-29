@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>M. Afif Abinayya | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #111;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        .hero {
+            background: white;
+            padding: 100px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero-text p:first-child {
+            color: #777;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-size: 23px;
+            font-weight: normal;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+            border: 1px solid #111;
+        }
+
+        .button-outline {
+            background: white;
+            color: #111;
+        }
+
+        .photo {
+            width: 300px;
+            height: 350px;
+            background: #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #888;
+        }
+
+        section {
+            padding: 80px 8%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .section-title p {
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin-top: 5px;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+        }
+
+        .about p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .education-card,
+        .experience-card,
+        .activity-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card-header h3 {
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .card-description {
+            margin-top: 18px;
+            color: #555;
+        }
+
+        .experience-card ul {
+            margin-top: 18px;
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .experience-card li {
+            margin-bottom: 8px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            background: white;
+            padding: 25px;
+            border: 1px solid #ddd;
+        }
+
+        .skill h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .skill p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .documentation {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .document-box {
+            height: 200px;
+            background: white;
+            border: 2px dashed #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #888;
+            padding: 20px;
+        }
+
+        .contact {
+            background: #111;
+            color: white;
+        }
+
+        .contact p {
+            color: #bbb;
+            max-width: 650px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            font-size: 17px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background: white;
+            text-align: center;
+            padding: 25px;
+            color: #888;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 5%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .photo {
+                width: 100%;
+                height: 300px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .documentation {
+                grid-template-columns: 1fr;
+            }
+
+            .card-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <h2>AFIF ABINAYYA</h2>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HOME -->
+
+<div class="hero">
+
+    <div class="hero-text">
+
+        <p>PORTFOLIO · D3 ADMINISTRASI BISNIS</p>
+
+        <h1>M. Afif Abinayya</h1>
+
+        <h3>Administration & Banking</h3>
+
+        <p class="hero-description">
+            Mahasiswa D3 Administrasi Bisnis Politeknik Negeri Medan
+            dengan pengalaman magang di Consumer Loan Factory (CLF)
+            pada PT Bank Rakyat Indonesia (Persero) Tbk Regional Office Medan.
+        </p>
+
+        <a href="#experience" class="button">
+            Lihat Pengalaman
+        </a>
+
+        <a href="#contact" class="button button-outline">
+            Hubungi Saya
+        </a>
+
+    </div>
+
+
+    <div class="photo">
+
+        <div>
+            <strong>FOTO FORMAL</strong>
+            <br>
+            <small>
+                Foto dapat ditambahkan<br>
+                kemudian
+            </small>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+        <p>01 · PROFILE</p>
+        <h2>About Me</h2>
+    </div>
+
+
+    <div class="about">
+
+        <div>
+            <h3>Profil Singkat</h3>
+        </div>
+
+
+        <div>
+
+            <p>
+                Saya merupakan mahasiswa Program Studi D3 Administrasi Bisnis
+                di Politeknik Negeri Medan yang memiliki ketertarikan pada
+                bidang administrasi, perbankan, pengolahan data, dan pelayanan.
+            </p>
+
+            <p>
+                Selama masa perkuliahan, saya mendapatkan pengalaman melalui
+                kegiatan akademik, kepanitiaan, serta pengalaman magang di
+                PT Bank Rakyat Indonesia (Persero) Tbk Regional Office Medan.
+            </p>
+
+            <p>
+                Saya terbiasa menggunakan Microsoft Office dan memiliki
+                kemampuan bekerja secara teliti, terstruktur, serta mampu
+                bekerja sama dalam tim.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-title">
+        <p>02 · EDUCATION</p>
+        <h2>Education</h2>
+    </div>
+
+
+    <div class="education-card">
+
+        <div class="card-header">
+
+            <div>
+                <h3>Politeknik Negeri Medan</h3>
+
+                <p>
+                    D3 Administrasi Bisnis
+                </p>
+            </div>
+
+            <div class="date">
+                2023 – Sekarang
+            </div>
+
+        </div>
+
+        <p class="card-description">
+            Indeks Prestasi Kumulatif (IPK):
+            <strong>3,34 / 4,00</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="section-title">
+        <p>03 · EXPERIENCE</p>
+        <h2>Internship Experience</h2>
+    </div>
+
+
+    <div class="experience-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    PT Bank Rakyat Indonesia (Persero) Tbk
+                </h3>
+
+                <p>
+                    Regional Office Medan · Consumer Loan Factory (CLF)
+                </p>
+
+            </div>
+
+            <div class="date">
+                Januari – April 2026
+            </div>
+
+        </div>
+
+
+        <p class="card-description">
+
+            Selama melaksanakan kegiatan magang di Consumer Loan Factory,
+            saya terlibat dalam beberapa kegiatan administrasi dan pemeriksaan
+            yang mendukung proses pekerjaan.
+
+        </p>
+
+
+        <ul>
+
+            <li>
+                Membantu melakukan pengecekan data terkait proses
+                Kredit Pemilikan Rumah (KPR) menggunakan spreadsheet.
+            </li>
+
+            <li>
+                Melakukan pemeriksaan data dan kelengkapan berkas
+                sesuai kebutuhan pekerjaan.
+            </li>
+
+            <li>
+                Membantu pengecekan berkas kartu kredit.
+            </li>
+
+            <li>
+                Melakukan pencatatan berkas kartu kredit yang telah disetujui.
+            </li>
+
+            <li>
+                Mengikuti kegiatan kunjungan ke tempat usaha calon nasabah.
+            </li>
+
+            <li>
+                Membantu persiapan kegiatan internal perusahaan.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- CAMPUS ACTIVITIES -->
+
+<section>
+
+    <div class="section-title">
+        <p>04 · ACTIVITIES</p>
+        <h2>Campus Activities</h2>
+    </div>
+
+
+    <div class="activity-card">
+
+        <h3>Seminar Digital Harmony</h3>
+
+        <p>
+            <strong>Panitia Konsumsi</strong>
+        </p>
+
+        <p class="card-description">
+
+            Membantu persiapan dan kebutuhan konsumsi selama kegiatan
+            yang diikuti lebih dari 30 peserta.
+
+        </p>
+
+    </div>
+
+
+    <div class="activity-card">
+
+        <h3>Lifestyle and Trend Social</h3>
+
+        <p>
+            <strong>Opening Speaker</strong>
+        </p>
+
+        <p class="card-description">
+
+            Memberikan sambutan pembukaan dalam kegiatan seminar
+            sebagai bagian dari tugas Mata Kuliah Teknik Presentasi
+            dan Negosiasi.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-title">
+        <p>05 · SKILLS</p>
+        <h2>Skills</h2>
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>Microsoft Word</h3>
+            <p>Dokumen dan pekerjaan administrasi.</p>
+        </div>
+
+        <div class="skill">
+            <h3>Microsoft Excel</h3>
+            <p>Spreadsheet, data checking, dan pengolahan data.</p>
+        </div>
+
+        <div class="skill">
+            <h3>PowerPoint</h3>
+            <p>Pembuatan materi dan presentasi.</p>
+        </div>
+
+        <div class="skill">
+            <h3>Adobe Photoshop</h3>
+            <p>Desain dan pengolahan gambar.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DOCUMENTATION -->
+
+<section>
+
+    <div class="section-title">
+        <p>06 · DOCUMENTATION</p>
+        <h2>Documentation</h2>
+    </div>
+
+
+    <div class="documentation">
+
+        <div class="document-box">
+
+            <div>
+                <strong>FOTO MAGANG</strong>
+                <br>
+                <small>
+                    Dokumentasi magang akan ditambahkan
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="document-box">
+
+            <div>
+                <strong>SURAT KETERANGAN MAGANG</strong>
+                <br>
+                <small>
+                    Akan ditambahkan kemudian
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="document-box">
+
+            <div>
+                <strong>KEGIATAN KAMPUS</strong>
+                <br>
+                <small>
+                    Foto kegiatan akan ditambahkan
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="document-box">
+
+            <div>
+                <strong>HASIL KARYA</strong>
+                <br>
+                <small>
+                    Desain / Excel / PowerPoint
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+        <p>07 · CONTACT</p>
+        <h2>Let's Connect</h2>
+    </div>
+
+
+    <p>
+
+        Terima kasih telah mengunjungi portfolio saya.
+        Saya terbuka untuk kesempatan kerja, internship,
+        maupun kesempatan profesional lainnya yang sesuai
+        dengan bidang administrasi dan perbankan.
+
+    </p>
+
+
+    <div class="contact-info">
+
+        <p>
+            📧
+            <a href="mailto:mafifabinayya@gmail.com">
+                mafifabinayya@gmail.com
+            </a>
+        </p>
+
+        <p>
+            📱
+            <a href="https://wa.me/6282277630639" target="_blank">
+                082277630639
+            </a>
+        </p>
+
+        <p>
+            📍 Medan, Sumatera Utara
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 M. Afif Abinayya · Portfolio
+
+</footer>
+
+
+</body>
+</html>
