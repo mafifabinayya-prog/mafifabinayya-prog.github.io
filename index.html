@@ -1,1 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Afif Abinayya | Portfolio</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #111;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: white;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h2 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .hero-text p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn.secondary {
+            background: #ddd;
+            color: #111;
+        }
+
+        .photo {
+            width: 280px;
+            height: 350px;
+            overflow: hidden;
+            background: #ddd;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #777;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .about {
+            background: #f5f5f5;
+        }
+
+        .about-box {
+            max-width: 850px;
+        }
+
+        .about-box p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        .card .date {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .skills {
+            background: white;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #eee;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .contact {
+            background: #111;
+            color: white;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            color: white;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 60px;
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-text h2 {
+                font-size: 21px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                width: 230px;
+                height: 290px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Afif Abinayya</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>M. Afif Abinayya</h1>
+
+            <h2>Administration & Banking</h2>
+
+            <p>
+                Mahasiswa D3 Administrasi Bisnis Politeknik Negeri Medan
+                yang memiliki pengalaman magang di bidang administrasi
+                dan proses kredit pada Consumer Loan Factory PT Bank
+                Rakyat Indonesia (Persero) Tbk Regional Office Medan.
+            </p>
+
+            <div class="buttons">
+                <a href="#experience" class="btn">Lihat Pengalaman</a>
+                <a href="#contact" class="btn secondary">Hubungi Saya</a>
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <div class="photo-placeholder">
+                <div>
+                    <strong>FOTO FORMAL</strong>
+                    <br><br>
+                    Foto dapat ditambahkan
+                    kemudian
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-box">
+
+            <p>
+                Saya merupakan mahasiswa D3 Administrasi Bisnis di
+                Politeknik Negeri Medan yang memiliki ketertarikan
+                pada bidang administrasi, perbankan, dan pengelolaan
+                data.
+            </p>
+
+            <p>
+                Saya memiliki pengalaman magang di Consumer Loan Factory
+                PT Bank Rakyat Indonesia (Persero) Tbk Regional Office
+                Medan. Selama magang, saya terlibat dalam kegiatan
+                pemeriksaan data, data entry, serta mendukung proses
+                administrasi kredit.
+            </p>
+
+            <p>
+                Saya mampu bekerja secara individu maupun dalam tim,
+                memiliki kemampuan menggunakan Microsoft Office, serta
+                memiliki kemampuan komunikasi dan presentasi.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>Internship — Consumer Loan Factory</h3>
+
+                <div class="date">
+                    PT Bank Rakyat Indonesia (Persero) Tbk
+                    Regional Office Medan
+                    <br>
+                    Januari – April 2026
+                </div>
+
+                <ul>
+                    <li>Melakukan pengecekan data KPR melalui spreadsheet.</li>
+
+                    <li>
+                        Membantu pemeriksaan kelengkapan data dan dokumen
+                        yang berkaitan dengan proses kredit.
+                    </li>
+
+                    <li>
+                        Melakukan input data sesuai kebutuhan administrasi
+                        proses kredit.
+                    </li>
+
+                    <li>
+                        Membantu pengecekan data pada proses kartu kredit.
+                    </li>
+
+                    <li>
+                        Mendukung kegiatan administrasi dan operasional
+                        pada Consumer Loan Factory.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Committee — Seminar Digital Harmony</h3>
+
+                <div class="date">
+                    Politeknik Negeri Medan
+                </div>
+
+                <ul>
+                    <li>
+                        Menjadi anggota panitia bagian konsumsi.
+                    </li>
+
+                    <li>
+                        Membantu persiapan kebutuhan konsumsi kegiatan.
+                    </li>
+
+                    <li>
+                        Berkontribusi dalam kegiatan yang diikuti lebih
+                        dari 30 peserta.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Opening Remarks — Lifestyle and Trend Social</h3>
+
+                <div class="date">
+                    Mata Kuliah Teknik Presentasi dan Negosiasi
+                </div>
+
+                <ul>
+                    <li>
+                        Menyampaikan opening remarks pada kegiatan seminar.
+                    </li>
+
+                    <li>
+                        Melatih kemampuan komunikasi dan presentasi
+                        di depan peserta.
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education" class="about">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>Politeknik Negeri Medan</h3>
+
+                <div class="date">
+                    D3 Administrasi Bisnis
+                    <br>
+                    2023 – Sekarang
+                </div>
+
+                <p>
+                    IPK: <strong>3.34 / 4.00</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skill-list">
+
+            <div class="skill">Microsoft Word</div>
+            <div class="skill">Microsoft Excel</div>
+            <div class="skill">Microsoft PowerPoint</div>
+            <div class="skill">Data Entry</div>
+            <div class="skill">Administrasi</div>
+            <div class="skill">Data Checking</div>
+            <div class="skill">Presentation</div>
+            <div class="skill">Teamwork</div>
+            <div class="skill">Photoshop</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+
+        <h2 class="section-title">Contact</h2>
+
+        <p>
+            Email:
+            <a href="mailto:mafifabinayya@gmail.com">
+                mafifabinayya@gmail.com
+            </a>
+        </p>
+
+        <p>
+            WhatsApp:
+            <a href="https://wa.me/6282277630639" target="_blank">
+                082277630639
+            </a>
+        </p>
+
+    </section>
+
+
+    <footer>
+        © 2026 M. Afif Abinayya. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
